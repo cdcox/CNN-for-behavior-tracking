@@ -25,7 +25,7 @@ Luckily videos generate a bunch of free training data; one 5 minute video genera
 
 The videos from this set came in sets of 3
 
-![png][sample_image.png]
+![png](sample_image.png)
 
 (Note animals in this experiment were all handled by UCI IACUC protocols and animals under cups had no signs of distress and were only under the cups for minimal amounts of time, there was also a fair amount of space there)
 
@@ -39,15 +39,15 @@ Of course it wasn’t that easy, humans are notably ‘slow’ relative to a com
 
 4 convolutional layers, then a max pooling layer and a dense layer, boring, kind of deep but  for the size of the dataset and the ‘simplicity’ of the task and the relatively few number of tasks, and as we train it we see:
 
-![png][train_acc_base.png]
-![png][train_loss_base.png]
+![png](train_acc_base.png)
+![png](train_loss_base.png)
 
 Pretty standard training, approaching 90%!
 Using VGG19 to see if a pertained network works better:
 It certainly hits criterion faster but has some overfitting (not surprising I only have 1300 images per category!)
  
-![png][train_acc_VGG19.png]
-![png][train_loss_VGG19.png]
+![png](train_acc_VGG19.png)
+![png](train_loss_VGG19.png)
 
 Graphs are great but it does lead to the biggest question: how does it look?
 
