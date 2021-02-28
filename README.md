@@ -3,7 +3,7 @@
 
 Using a convolutional neural network to score rodent behavior v0.2
 
-##The problem:
+## The problem:
 One of the more fundamental behavioral tasks in modern day neuroscience is a class of tasks broadly classified as recognition tasks. In these tasks a researcher times how long an animal interacts with a number of objects.  As most animals find novelty rewarding animals will interact with a moved object (object place memory, hippocampal), a novel object (object recognition memory, probably entorhinal), a novel mouse (social recognition memory, region currently being determined but is disrupted in models of Fragile X), or a temporally less recent object (CA3 dependent) more than an unchanged one. 
 While this sounds fairly trivial from a computer vision perspective:
 
@@ -15,13 +15,13 @@ It turns out that animals can interact with objects in non-attentive ways (climb
 
 If a machine learning algorithm could be developed with even reasonable accuracy it could be used to at least automate scoring of the training sessions (which are usually used to determine ‘did a mouse interact with both objects an approximately similar amount). If an algorithm could be developed that can cross correlate with a skilled researcher 95%+ it would mat about what we see with humans.
 
-##The Dataset:
+## The Dataset:
 
 Normally to train a proper CNN thousands of examples of labeled data, or a pretrained network on Imagenet would be required. But I’m worried that imagenet trained CNNs seem to ditch spatial information (that’s what they are trained to do!), which is actually massively important for this task. 
 
 Luckily videos generate a bunch of free training data; one 5 minute video generates 4500 unique images. We can align this with a person scoring a video by building a stop watch program that captures this info. A single video then could give us enough data to prototype this on (not well, but it won’t be bad)
 
-##Approach: 
+## Approach: 
 
 The videos from this set came in sets of 3
 
@@ -31,11 +31,11 @@ The videos from this set came in sets of 3
 
 Video slicer slices the videos into 3 equally sized sub videos based on human found borders (next version find these automatically). It then uses .trn files which say if an animal was interacting with an object. It splits these videos into 3 categories: top object, bottom, object, and no object.
 
-##Gotchas!
+## Gotchas!
 
 Of course it wasn’t that easy, humans are notably ‘slow’ relative to a computer (300-500ms!) to fix this, I found that empirically you need to throw a 7 frame buffer on the videos, I also found performance was enhanced by dropping these frames as variable reaction speed/catching up that humans do lead to that being the safe choice.
 
-##FINALLY THE MODEL:
+## FINALLY THE MODEL:
 
 4 convolutional layers, then a max pooling layer and a dense layer, boring, kind of deep but  for the size of the dataset and the ‘simplicity’ of the task and the relatively few number of tasks, and as we train it we see:
 
