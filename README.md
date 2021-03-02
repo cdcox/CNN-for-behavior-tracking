@@ -11,7 +11,7 @@ While this sounds fairly trivial from a computer vision perspective:
 2.	background subtract 
 3.	profit
 
-It turns out that animals can interact with objects in non-attentive ways (climbing on objects, chewing on objects, grooming near objects) and can interact with objects from various distances. Trained researchers have little or no ability distinguishing this behavior but new researchers often struggle. Also, given a single experiment can involve 4 training sessions (5min each) and a test session (3-5mins) and 40+ rodents, the time required for trained personnel is immense. 
+It turns out that animals can interact with objects in non-attentive ways (climbing on objects, chewing on objects, grooming near objects) and can interact with objects from various distances. Trained researchers have little or no trouble distinguishing this behavior but new researchers often struggle. Also, given a single experiment can involve 4 training sessions (5min each) and a test session (3-5mins) and 40+ rodents, the time required for trained personnel is immense. 
 
 If a machine learning algorithm could be developed with even reasonable accuracy it could be used to at least automate scoring of the training sessions (which are usually used to determine ‘did a mouse interact with both objects an approximately similar amount). If an algorithm could be developed that can cross correlate with a skilled researcher 95%+ it would mat about what we see with humans.
 
